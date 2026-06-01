@@ -1,0 +1,23 @@
+# Audit artifacts (intermediate)
+_audit/
+
+# Image processing intermediate files
+images/variants/
+images/fino-hero-ORIGINAL-backup.jpg
+
+# Deploy folder (regenerated from main)
+fino-deploy/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*

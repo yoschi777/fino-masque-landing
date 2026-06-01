@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://finomasquedz.netlify.app/sitemap.xml
