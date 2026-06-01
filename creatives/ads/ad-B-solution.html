@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  FINO MASQUE — AD CREATIVE B (Solution angle)
+  Canvas: 1080 x 1080 (Facebook feed square)
+  Layout: product_center_text_top
+  ============================================================
+  PRINT / SCREENSHOT INSTRUCTIONS:
+  1. Open this file in Chrome at 100% zoom.
+  2. Open DevTools (F12) → toggle device toolbar (Ctrl+Shift+M).
+  3. Set responsive viewport to exactly 1080 x 1080.
+  4. Use Chrome DevTools → "..." menu → "Capture full size screenshot"
+     OR use Cmd/Ctrl+Shift+P → "Capture node screenshot" on .canvas.
+  5. Alternative: run
+     `npx playwright screenshot --viewport-size=1080,1080 file:///C:/Users/33763/Desktop/fino-masque-landing/creatives/ads/ad-B-solution.html ad-B-solution.png`
+  ============================================================
+-->
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>Fino Masque — Ad B Solution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&family=Cairo:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Tajawal', 'Cairo', sans-serif;
+  }
+
+  .canvas {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: #fdf6e9;
+    background: radial-gradient(ellipse at center, #fdf6e9 0%, #f4e8d0 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* TEXT AREA — TOP */
+  .text-top {
+    width: 100%;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+  }
+
+  .emoji {
+    font-size: 64px;
+    line-height: 1;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  .headline {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 1.1;
+    color: #b48a5a;
+    text-align: center;
+    width: 600px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 8px rgba(180, 138, 90, 0.15);
+  }
+
+  .subline {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.2;
+    color: #2a1f17;
+    text-align: center;
+    width: 400px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    opacity: 0.85;
+  }
+
+  /* PRODUCT IMAGE — CENTER */
+  .product-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -42%);
+    width: 700px;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  .product-wrap::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(180, 138, 90, 0.18) 0%, transparent 65%);
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  .product-wrap img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1;
+    filter: drop-shadow(0 24px 40px rgba(42, 31, 23, 0.25));
+  }
+
+  /* PRICE BADGE — BOTTOM CORNER */
+  .price-badge {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    width: 200px;
+    height: 80px;
+    background: #2a1f17;
+    color: #ffffff;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    font-weight: 900;
+    font-size: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    box-shadow: 0 8px 24px rgba(42, 31, 23, 0.35);
+    z-index: 4;
+    letter-spacing: 0.5px;
+  }
+
+  /* Subtle decorative accents (NOT text — pure visual) */
+  .accent-dot {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(180, 138, 90, 0.12);
+    z-index: 0;
+  }
+  .accent-dot.a { width: 180px; height: 180px; top: -60px; right: -60px; }
+  .accent-dot.b { width: 120px; height: 120px; bottom: 200px; right: 80px; }
+  .accent-dot.c { width: 90px;  height: 90px;  top: 280px;  left: 60px; }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <!-- Decorative accents -->
+    <div class="accent-dot a"></div>
+    <div class="accent-dot b"></div>
+    <div class="accent-dot c"></div>
+
+    <!-- TEXT AREA (top) -->
+    <div class="text-top">
+      <div class="emoji">&#10024;</div>
+      <div class="headline">شعرك حرير في 5 دقائق</div>
+      <div class="subline">ماسك ياباني فاخر</div>
+    </div>
+
+    <!-- PRODUCT IMAGE (center) -->
+    <div class="product-wrap">
+      <img src="../../images/fino-hero.jpg" alt="Fino Premium Touch Hair Mask">
+    </div>
+
+    <!-- PRICE BADGE (bottom-left corner) -->
+    <div class="price-badge">4300 دج</div>
+  </div>
+</body>
+</html>

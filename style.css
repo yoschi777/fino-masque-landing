@@ -808,6 +808,7 @@ img { max-width: 100%; height: auto; display: block; }
   .order-form { padding: 24px 20px; }
   .price-block__amount { font-size: 34px; }
   .cta-button, .submit-button { font-size: 18px; padding: 17px 22px; }
+  .wa-float { bottom: 84px; width: 54px; height: 54px; font-size: 26px; }
 }
 
 @media (max-width: 480px) {

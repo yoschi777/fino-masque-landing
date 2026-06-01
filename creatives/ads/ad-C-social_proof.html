@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--
+  PRINT INSTRUCTIONS:
+  1. Open this file in Chrome at 100% zoom
+  2. Use DevTools (F12) > Toggle Device Toolbar (Ctrl+Shift+M)
+  3. Set custom device to 1080 x 1080
+  4. Right-click canvas > "Capture node screenshot" on the .canvas element
+  OR
+  - Use Puppeteer: page.setViewport({width:1080, height:1080}); await page.screenshot({path:'ad-C.jpg', quality:92, type:'jpeg'});
+-->
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Fino Masque - Ad C - Social Proof</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;900&family=Cairo:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Tajawal', 'Cairo', sans-serif;
+  }
+  .canvas {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #d4416d 0%, #c0365e 100%);
+    display: flex;
+    flex-direction: row-reverse; /* product_left_text_right: in RTL, text on right means it comes first */
+  }
+  /* Product on LEFT (visually) — in RTL flex, the second child becomes left */
+  .product-side {
+    width: 540px;
+    height: 1080px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .product-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  /* Text on RIGHT (visually) */
+  .text-side {
+    width: 540px;
+    height: 1080px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+  }
+  .emoji {
+    width: 80px;
+    height: 80px;
+    font-size: 70px;
+    line-height: 80px;
+    text-align: center;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25));
+  }
+  .headline {
+    width: 460px;
+    max-width: 600px;
+    height: auto;
+    max-height: 150px;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1.05;
+    color: #fdf6e9;
+    text-align: center;
+    text-shadow: 0 3px 14px rgba(0,0,0,0.22);
+    letter-spacing: -0.5px;
+    margin-bottom: 18px;
+  }
+  .subline {
+    width: 400px;
+    max-width: 400px;
+    height: auto;
+    max-height: 60px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fdf6e9;
+    text-align: center;
+    opacity: 0.96;
+  }
+  .price-tag {
+    position: absolute;
+    bottom: 60px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 200px;
+    height: 60px;
+    background: #1a1a1a;
+    color: #ffffff;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    letter-spacing: 0.2px;
+  }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <!-- Text side (right in RTL render) -->
+    <div class="text-side">
+      <div class="emoji">⭐</div>
+      <div class="headline">اخترتو 5000 امرأة</div>
+      <div class="subline">النتيجة من أول مرة</div>
+      <div class="price-tag">تجربة مضمونة</div>
+    </div>
+    <!-- Product side (left visually) -->
+    <div class="product-side">
+      <img src="../../images/fino-hero.jpg" alt="Fino Masque">
+    </div>
+  </div>
+</body>
+</html>

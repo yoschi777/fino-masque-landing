@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  FINO MASQUE — AD CREATIVE D — ANGLE: MECHANISM
+  ============================================================
+  Canvas: 1080 x 1080 px (Facebook feed square)
+  Layout: product_center_text_bottom
+  Persona: Femme 28-40 éduquée, sensible aux ingrédients naturels
+  ------------------------------------------------------------
+  HOW TO EXPORT / SCREENSHOT:
+  1. Open this file in Chrome.
+  2. Open DevTools (F12) > Toggle device toolbar (Ctrl+Shift+M).
+  3. Set custom viewport to 1080 x 1080.
+  4. Right-click the .canvas element > Capture node screenshot.
+     OR use DevTools command menu (Ctrl+Shift+P) > "Capture full size screenshot".
+  5. Alternative: run from terminal:
+     chromium --headless --screenshot=ad-D.png --window-size=1080,1080 file:///.../ad-D-mechanism.html
+  ============================================================
+-->
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>Fino Masque — Ad D — Mechanism</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: #1a1a1a;
+    font-family: 'Tajawal', 'Cairo', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .canvas {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: #fdf6e9;
+    background-image:
+      radial-gradient(circle at 20% 15%, rgba(180, 138, 90, 0.10) 0%, transparent 45%),
+      radial-gradient(circle at 85% 90%, rgba(180, 138, 90, 0.08) 0%, transparent 50%),
+      linear-gradient(135deg, #fdf6e9 0%, #f7ecd6 100%);
+  }
+
+  /* Decorative honeycomb accent ring (subtle) */
+  .deco-ring {
+    position: absolute;
+    width: 820px;
+    height: 820px;
+    top: 130px;
+    left: 130px;
+    border-radius: 50%;
+    border: 2px dashed rgba(180, 138, 90, 0.25);
+    pointer-events: none;
+  }
+  .deco-ring-inner {
+    position: absolute;
+    width: 680px;
+    height: 680px;
+    top: 200px;
+    left: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 235, 200, 0.5) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* PRODUCT — centered, ~700x700 */
+  .product-wrap {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  .product-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 30px 40px rgba(120, 80, 30, 0.25));
+  }
+
+  /* ===== TEXT AREA (≤ 15% of canvas) ===== */
+
+  /* Headline rect: ~600 x 130 = 78,000 px² */
+  .headline {
+    position: absolute;
+    bottom: 138px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #b48a5a;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 0 rgba(255, 255, 255, 0.5);
+    z-index: 3;
+  }
+
+  /* Subline rect: ~400 x 55 = 22,000 px² */
+  .subline {
+    position: absolute;
+    bottom: 78px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #2a1f17;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1;
+    z-index: 3;
+  }
+
+  /* Emoji rect: ~70 x 70 = 4,900 px² */
+  .accent-emoji {
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    line-height: 1;
+    z-index: 4;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+  }
+
+  /* Price label pill: ~200 x 70 = 14,000 px² */
+  .price-tag {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    width: 200px;
+    height: 70px;
+    background: #2a1f17;
+    color: #ffffff;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    letter-spacing: 0.3px;
+    box-shadow: 0 6px 18px rgba(42, 31, 23, 0.35);
+    z-index: 4;
+  }
+
+  /* ===== TEXT AREA TOTAL =====
+     Headline   600 x 130 =  78,000 px²
+     Subline    400 x  55 =  22,000 px²
+     Emoji       70 x  70 =   4,900 px²
+     Price tag  200 x  70 =  14,000 px²
+     ----------------------------------
+     TOTAL              =  118,900 px²
+     Canvas             = 1,166,400 px²
+     Text area share    =  ~10.2 %  ✅  (< 15 %)
+  =========================================== */
+
+</style>
+</head>
+<body>
+
+  <div class="canvas">
+
+    <!-- Decorative background rings -->
+    <div class="deco-ring"></div>
+    <div class="deco-ring-inner"></div>
+
+    <!-- Accent emoji (top-right) -->
+    <div class="accent-emoji">🍯</div>
+
+    <!-- Price / formula label (top-left) -->
+    <div class="price-tag">تركيبة يابانية</div>
+
+    <!-- Product (centered) -->
+    <div class="product-wrap">
+      <img src="../../images/fino-hero.jpg" alt="Fino Masque">
+    </div>
+
+    <!-- Headline (Arabic) -->
+    <div class="headline">غذاء ملكات النحل</div>
+
+    <!-- Subline -->
+    <div class="subline">+ 6 زيوت طبيعية</div>
+
+  </div>
+
+</body>
+</html>
