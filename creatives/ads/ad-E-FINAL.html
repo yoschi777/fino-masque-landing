@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--
+  AD E — FINAL (URGENCY angle) — Fino Premium Touch DZ
+  Format : 1080x1080
+  AI bg : ai-backgrounds/ai-bg-E.png (spotlight + red petals + pedestal)
+  Mood  : exclusive offer, FOMO, Black Friday luxe
+  Darija pure — no MSA
+
+  Screenshot : F12 → 1080×1080 → Ctrl+Shift+P → "Capture full size screenshot"
+-->
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Fino Ad E FINAL - Urgency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@800;900&family=Tajawal:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    background: #0a0a0a;
+    font-family: 'Tajawal', 'Cairo', sans-serif;
+    overflow: hidden;
+  }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+
+  .canvas {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: #0a0a0a;
+  }
+
+  .ai-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  /* TOP dark gradient — for top urgency badge */
+  .top-shade {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 280px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, transparent 100%);
+    z-index: 2;
+  }
+
+  /* BOTTOM dark gradient */
+  .bottom-shade {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 240px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 100%);
+    z-index: 2;
+  }
+
+  /* ==== Top eyebrow: "عرض خاص" ==== */
+  .eyebrow {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    color: #ffb84d;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    text-shadow: 0 0 18px rgba(255, 184, 77, 0.6);
+    direction: rtl;
+  }
+
+  /* ==== HUGE -35% BADGE — visual anchor ==== */
+  .discount-badge {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    width: 320px;
+    height: 170px;
+    background: linear-gradient(135deg, #ff3b3b 0%, #c5102e 100%);
+    border: 3px solid #ffb84d;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+      0 0 60px rgba(255, 59, 59, 0.55),
+      0 20px 50px rgba(0,0,0,0.7),
+      inset 0 0 30px rgba(255, 255, 255, 0.08);
+    transform: translateX(-50%) rotate(-3deg);
+  }
+  .discount-badge__num {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 900;
+    font-size: 110px;
+    color: #ffffff;
+    line-height: 1;
+    letter-spacing: -4px;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.5);
+    direction: ltr;
+  }
+  .discount-badge__lbl {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    color: #ffb84d;
+    letter-spacing: 4px;
+    margin-top: -4px;
+    direction: rtl;
+  }
+
+  /* ==== HEADLINE darija punch ==== */
+  .headline-wrap {
+    position: absolute;
+    bottom: 220px;
+    left: 60px;
+    right: 60px;
+    z-index: 5;
+    text-align: center;
+    direction: rtl;
+  }
+
+  .headline {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    font-weight: 900;
+    font-size: 84px;
+    line-height: 1.0;
+    color: #ffffff;
+    text-shadow:
+      0 6px 30px rgba(0,0,0,0.95),
+      0 0 24px rgba(255, 59, 59, 0.4);
+    letter-spacing: -2px;
+    margin-bottom: 12px;
+  }
+  .headline .fire { color: #ffb84d; font-size: 70px; }
+
+  .subline {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    color: #fde2ea;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.85);
+  }
+
+  /* ==== BOTTOM BAR ==== */
+  .bottom-bar {
+    position: absolute;
+    bottom: 56px;
+    left: 60px;
+    right: 60px;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    direction: rtl;
+  }
+
+  .brand {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    direction: ltr;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  }
+  .brand::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #ffb84d;
+    border-radius: 50%;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+
+  .cta-tag {
+    background: #ffffff;
+    color: #c5102e;
+    padding: 16px 28px;
+    border-radius: 999px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+    direction: rtl;
+    box-shadow: 0 12px 30px rgba(255, 59, 59, 0.55);
+    border: 2px solid #ffb84d;
+  }
+</style>
+</head>
+<body>
+  <div class="canvas">
+
+    <img src="ai-backgrounds/ai-bg-E.png" alt="" class="ai-bg">
+
+    <div class="top-shade"></div>
+    <div class="bottom-shade"></div>
+
+    <!-- Eyebrow: "EXCLUSIVE OFFER" in darija -->
+    <div class="eyebrow">عرض خاص</div>
+
+    <!-- BIG -35% badge -->
+    <div class="discount-badge">
+      <div class="discount-badge__num">-35%</div>
+      <div class="discount-badge__lbl">تخفيض</div>
+    </div>
+
+    <!-- Headline in pure darija -->
+    <div class="headline-wrap">
+      <div class="headline">اليوم غير <span class="fire">🔥</span></div>
+      <div class="subline">الكميّة راهي تكمل — ما تتأخّريش</div>
+    </div>
+
+    <!-- Bottom: brand + CTA -->
+    <div class="bottom-bar">
+      <div class="brand">fino</div>
+      <div class="cta-tag">دير طلبيتك دروك</div>
+    </div>
+
+  </div>
+</body>
+</html>

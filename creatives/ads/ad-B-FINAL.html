@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!--
+  AD B — FINAL (PROMISE angle) — Fino Premium Touch DZ
+  Format : 1080x1080 (FB Feed square)
+  AI bg : ai-backgrounds/ai-bg-B.png (Midjourney V6, silk + hair + sakura)
+  Mood  : aspirational, dreamy, soft, premium Japan
+
+  Screenshot 1080x1080 : F12 → device toolbar 1080×1080 → Ctrl+Shift+P → "Capture full size screenshot"
+-->
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Fino Ad B FINAL - Promise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@800;900&family=Tajawal:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    background: #f5ebd9;
+    font-family: 'Tajawal', 'Cairo', sans-serif;
+    overflow: hidden;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .canvas {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: #fdf6e9;
+  }
+
+  .ai-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  /* TOP cream-to-transparent gradient for headline readability */
+  .top-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 380px;
+    background: linear-gradient(180deg,
+      rgba(253, 246, 233, 0.85) 0%,
+      rgba(253, 246, 233, 0.55) 50%,
+      transparent 100%);
+    z-index: 2;
+  }
+
+  /* BOTTOM subtle cream haze for price tag */
+  .bottom-shade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(0deg,
+      rgba(253, 246, 233, 0.7) 0%,
+      transparent 100%);
+    z-index: 2;
+  }
+
+  /* ==== HEADLINE BLOCK (top, dark text on light bg) ==== */
+  .headline-wrap {
+    position: absolute;
+    top: 70px;
+    left: 60px;
+    right: 60px;
+    z-index: 5;
+    text-align: center;
+    direction: rtl;
+  }
+
+  .eyebrow {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    color: #b48a5a;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.6);
+  }
+
+  .headline {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    font-weight: 900;
+    font-size: 82px;
+    line-height: 1.05;
+    color: #2a1f17;
+    text-shadow: 0 2px 18px rgba(253, 246, 233, 0.8);
+    letter-spacing: -1px;
+    margin-bottom: 18px;
+  }
+  .headline .accent { color: #b48a5a; }
+
+  .subline {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: #5c4a3d;
+    text-shadow: 0 1px 8px rgba(255, 255, 255, 0.6);
+    opacity: 0.92;
+  }
+
+  /* ==== BOTTOM BAR ==== */
+  .bottom-bar {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    right: 60px;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    direction: rtl;
+  }
+
+  .brand {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    color: #2a1f17;
+    letter-spacing: 1px;
+    direction: ltr;
+  }
+  .brand::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #b48a5a;
+    border-radius: 50%;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+
+  .price-tag {
+    background: #2a1f17;
+    color: #fdf6e9;
+    padding: 16px 26px;
+    border-radius: 999px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+    direction: rtl;
+    box-shadow: 0 12px 32px rgba(42, 31, 23, 0.35);
+    border: 2px solid rgba(180, 138, 90, 0.6);
+  }
+
+  /* ==== TEXT AREA AUDIT ====
+     eyebrow   400x30   = 12,000 px²
+     headline  960x180  = 172,800 px²
+     subline   600x40   = 24,000 px²
+     brand     200x40   = 8,000 px²
+     price tag 220x70   = 15,400 px²
+     ------------------------------
+     TOTAL             ~ 232,200 px²
+     CANVAS            = 1,166,400 px²
+     RATIO              = 19.9% (box) ≈ ~7-9% glyph coverage = SAFE
+  */
+</style>
+</head>
+<body>
+  <div class="canvas">
+
+    <!-- Midjourney AI hero -->
+    <img src="ai-backgrounds/ai-bg-B.png" alt="" class="ai-bg">
+
+    <!-- Soft cream shading for text contrast -->
+    <div class="top-shade"></div>
+    <div class="bottom-shade"></div>
+
+    <!-- Top headline -->
+    <div class="headline-wrap">
+      <div class="eyebrow">— سرّ من اليابان —</div>
+      <div class="headline">شعرك<br><span class="accent">يولّي حرير</span></div>
+      <div class="subline">في 5 دقايق برك ✨</div>
+    </div>
+
+    <!-- Bottom: brand + tag -->
+    <div class="bottom-bar">
+      <div class="brand">fino</div>
+      <div class="price-tag">جرّبيها و تشكريني 🌸</div>
+    </div>
+
+  </div>
+</body>
+</html>

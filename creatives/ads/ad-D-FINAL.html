@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--
+  AD D — FINAL (MECHANISM angle) — Fino Premium Touch DZ
+  Format : 1080x1080
+  AI bg : ai-backgrounds/ai-bg-D.png (ingredients flatlay marble)
+  Mood  : scientific, premium, "what's inside"
+
+  Screenshot : F12 → 1080×1080 → Ctrl+Shift+P → "Capture full size screenshot"
+-->
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Fino Ad D FINAL - Mechanism</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@800;900&family=Tajawal:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    background: #f5ebd9;
+    font-family: 'Tajawal', 'Cairo', sans-serif;
+    overflow: hidden;
+  }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+
+  .canvas {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: #fdf6e9;
+  }
+
+  .ai-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  /* Center vignette — softens the marble in middle for headline */
+  .center-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%,
+      rgba(253, 246, 233, 0.55) 0%,
+      rgba(253, 246, 233, 0.15) 35%,
+      transparent 60%);
+    z-index: 2;
+  }
+
+  /* TOP soft gradient */
+  .top-shade {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 220px;
+    background: linear-gradient(180deg,
+      rgba(253, 246, 233, 0.6) 0%,
+      transparent 100%);
+    z-index: 2;
+  }
+
+  /* BOTTOM soft gradient */
+  .bottom-shade {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 220px;
+    background: linear-gradient(0deg,
+      rgba(253, 246, 233, 0.75) 0%,
+      transparent 100%);
+    z-index: 2;
+  }
+
+  /* ==== Top badge ==== */
+  .top-badge {
+    position: absolute;
+    top: 56px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    background: #2a1f17;
+    color: #f5b97e;
+    padding: 10px 24px;
+    border-radius: 999px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    direction: rtl;
+    letter-spacing: 2px;
+    box-shadow: 0 8px 26px rgba(42, 31, 23, 0.35);
+  }
+  .top-badge::before {
+    content: '✦ ';
+    color: #f5b97e;
+  }
+
+  /* ==== HEADLINE (center) ==== */
+  .headline-wrap {
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    right: 60px;
+    transform: translateY(-50%);
+    z-index: 5;
+    text-align: center;
+    direction: rtl;
+  }
+
+  .headline {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    font-weight: 900;
+    font-size: 84px;
+    line-height: 1.0;
+    color: #2a1f17;
+    text-shadow: 0 4px 24px rgba(253, 246, 233, 0.9);
+    letter-spacing: -2px;
+    margin-bottom: 18px;
+  }
+  .headline .accent {
+    color: #b48a5a;
+    font-style: italic;
+  }
+
+  .subline {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    color: #5c4a3d;
+    text-shadow: 0 2px 12px rgba(253, 246, 233, 0.85);
+    margin-top: 8px;
+  }
+  .subline .num {
+    color: #b48a5a;
+    font-size: 50px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 900;
+  }
+
+  /* ==== BOTTOM BAR ==== */
+  .bottom-bar {
+    position: absolute;
+    bottom: 56px;
+    left: 60px;
+    right: 60px;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    direction: rtl;
+  }
+
+  .brand {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    color: #2a1f17;
+    letter-spacing: 1px;
+    direction: ltr;
+  }
+  .brand::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #b48a5a;
+    border-radius: 50%;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+
+  .price-tag {
+    background: linear-gradient(135deg, #f5b97e, #b48a5a);
+    color: #2a1f17;
+    padding: 16px 28px;
+    border-radius: 999px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+    direction: rtl;
+    box-shadow: 0 12px 32px rgba(180, 138, 90, 0.5);
+  }
+</style>
+</head>
+<body>
+  <div class="canvas">
+
+    <img src="ai-backgrounds/ai-bg-D.png" alt="" class="ai-bg">
+
+    <div class="top-shade"></div>
+    <div class="bottom-shade"></div>
+    <div class="center-vignette"></div>
+
+    <!-- Top badge: scientific -->
+    <div class="top-badge">🇯🇵 صنع في اليابان</div>
+
+    <!-- Center headline -->
+    <div class="headline-wrap">
+      <div class="headline">ماكلة<br><span class="accent">ملكات النحل</span></div>
+      <div class="subline">+ <span class="num">6</span> زيوت للشعر</div>
+    </div>
+
+    <!-- Bottom: brand + cta -->
+    <div class="bottom-bar">
+      <div class="brand">fino</div>
+      <div class="price-tag">سرّ الجميلات 🍯</div>
+    </div>
+
+  </div>
+</body>
+</html>
