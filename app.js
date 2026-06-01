@@ -131,7 +131,9 @@ els.wilaya.addEventListener("change", () => {
 });
 
 // ─── Quantity / wilaya / commune / delivery type → recompute summary ─
+// Multiple events to catch all browser quirks (Safari iOS, in-app browsers)
 els.quantity.addEventListener("change", updateSummary);
+els.quantity.addEventListener("input", updateSummary);
 els.commune.addEventListener("change", updateSummary);
 deliveryRadios.forEach((r) => r.addEventListener("change", updateSummary));
 

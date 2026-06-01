@@ -414,7 +414,7 @@
     </details>
     <details class="faq-item">
       <summary>واش Fino Premium Touch أصلي يابانية؟</summary>
-      <p>نعم — Fino ماركة يابانية فاخرة للعناية بالشعر، صنع في اليابان. نفس المنتج اللي تلقاه في صيدليات اليابان و كوريا. نوفّر فاتورة الاستيراد عند الطلب لمن يحب يتحقّق.</p>
+      <p>نعم — Fino ماركة يابانية فاخرة للعناية بالشعر، 100% أصلية ومستوردة من اليابان. نفس المنتج اللي تلقاه في صيدليات اليابان و كوريا.</p>
     </details>
     <details class="faq-item">
       <summary>كم تاخذ حتى يوصل عندي؟</summary>
@@ -490,11 +490,27 @@
     tick();
   })();
 
-  // ─── STOCK — descend lentement ───────────────
+  // ─── STOCK — dynamique avec localStorage + check date ──
+  // Stock persiste entre les visites + décrémente naturellement par jour
+  // Returning visitor le lendemain voit un chiffre plus bas (crédibilité)
   (function() {
-    const KEY = 'fino_stock';
-    let stock = parseInt(sessionStorage.getItem(KEY));
-    if (!stock || stock > 19) { stock = 19; sessionStorage.setItem(KEY, stock); }
+    const KEY = 'fino_stock_v2';
+    const DATE_KEY = 'fino_stock_lastday';
+    const today = new Date().toISOString().slice(0,10);
+
+    let stock = parseInt(localStorage.getItem(KEY));
+    const lastDay = localStorage.getItem(DATE_KEY);
+
+    if (!stock || stock < 6 || stock > 19) stock = 19;
+
+    // Returning visitor on a new day → reduce stock 1-2 per day
+    if (lastDay && lastDay !== today) {
+      const daysSince = Math.floor((new Date(today) - new Date(lastDay)) / 86400000);
+      stock = Math.max(6, stock - Math.min(daysSince * 2, 8));
+    }
+    localStorage.setItem(KEY, stock);
+    localStorage.setItem(DATE_KEY, today);
+
     function setStock(n) {
       var s1 = document.getElementById('stockCount');
       var s2 = document.getElementById('stockCount2');
@@ -506,10 +522,12 @@
       }
     }
     setStock(stock);
+
+    // Within session: occasional decrement (every ~45s, 10% chance)
     setInterval(function() {
-      if (stock > 6 && Math.random() < 0.15) {
+      if (stock > 6 && Math.random() < 0.10) {
         stock--;
-        sessionStorage.setItem(KEY, stock);
+        localStorage.setItem(KEY, stock);
         setStock(stock);
       }
     }, 45000);
