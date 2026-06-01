@@ -274,8 +274,8 @@ CPL moyen     : 600-1200 DZD
 Leads totaux  : 10-21
 No-show COD   : 30-50%
 Purchases     : 5-12
-Revenue       : 5×4300 = 21 500 DZD (min)
-              : 12×7500 = 90 000 DZD (max)
+Revenue       : 5×3800 = 19 000 DZD (min)
+              : 12×6900 = 82 800 DZD (max)
 ROAS estimé   : 1.7×-7× (large fourchette, normal en MVP)
 ```
 
