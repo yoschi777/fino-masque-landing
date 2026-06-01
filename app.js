@@ -314,7 +314,17 @@ els.form.addEventListener("submit", async (e) => {
         value: payload.totalDA,
         currency: "DZD",
       }, { eventID: leadEventId });
-      // Purchase removed — will fire server-side via CAPI from Apps Script when status='confirmé'.
+      // Purchase: fires on form submit (pragmatic MVP — includes no-shows but gives Meta signal to optimize).
+      // To be replaced by CAPI server-side fire (on operator status='confirmé') once CAPI token configured.
+      fbq("track", "Purchase", {
+        content_name: PRODUCT_NAME,
+        content_ids: [PRODUCT_ID],
+        content_type: "product",
+        content_category: "Beaute",
+        num_items: payload.quantity,
+        value: payload.totalDA,
+        currency: "DZD",
+      }, { eventID: leadEventId.replace('-ld', '-pur') });
     }
   } catch (err) {
     dlog("Submit error:", err);
